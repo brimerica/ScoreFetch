@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Backend (.NET)",
+      "type": "dotnet",
+      "request": "launch",
+      "projectPath": "${workspaceFolder}/Backend/Backend.csproj",
+      // "launchBrowser": {
+      //   "enabled": false
+      // },
+      "preLaunchTask": "build"
+    },
+    {
+      "name": "Frontend (Svelte)",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/Frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "console": "integratedTerminal"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full Stack (Svelte + .NET)",
+      "configurations": ["Backend (.NET)", "Frontend (Svelte)"]
+    }
+  ]
+}
