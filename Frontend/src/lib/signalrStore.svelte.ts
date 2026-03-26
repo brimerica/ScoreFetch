@@ -19,7 +19,7 @@ class SignalRManager {
 
         // Listen for the 'ReceiveData' call from your C# BackgroundService
         this.connection.on("ReceiveData", (newData: string) => {
-            this.data = newData; 
+            this.data = JSON.parse(newData); 
         });
 
         this.connection.onreconnecting(() => this.isConnected = false);

@@ -5,4 +5,5 @@ Accept: application/json
 
 ###
 
-https://ncaa-api.henrygd.com
+https://ncaa-api.henrygd.me/scoreboard/basketball-men/d1
+Accept: application/json

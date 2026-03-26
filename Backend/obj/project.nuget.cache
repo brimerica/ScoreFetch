@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ql2zbefb0qg=",
+  "dgSpecHash": "VXIO5SlvjfY=",
   "success": true,
-  "projectFilePath": "C:\\Development\\repos\\ScoreFetch\\Backend\\Backend.csproj",
+  "projectFilePath": "C:\\Development\\ScoreFetch\\Backend\\Backend.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Brian\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.0\\microsoft.aspnetcore.openapi.9.0.0.nupkg.sha512",
-    "C:\\Users\\Brian\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+    "C:\\Users\\brime\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.0\\microsoft.aspnetcore.openapi.9.0.0.nupkg.sha512",
+    "C:\\Users\\brime\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
   ],
   "logs": []
 }

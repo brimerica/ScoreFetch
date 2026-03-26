@@ -6,9 +6,9 @@
       "type": "dotnet",
       "request": "launch",
       "projectPath": "${workspaceFolder}/Backend/Backend.csproj",
-      // "launchBrowser": {
-      //   "enabled": false
-      // },
+      "launchBrowser": {
+        "enabled": false
+      },
       "preLaunchTask": "build"
     },
     {

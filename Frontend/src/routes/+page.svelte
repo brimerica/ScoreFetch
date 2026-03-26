@@ -8,7 +8,12 @@
     {#if signalrManager.isConnected}
         <div class="data-card">
             <h3>Latest Update from Remote API:</h3>
-            <p>{signalrManager.data}</p>
+            <p>{signalrManager.data.games[0].game.away.names.short} {signalrManager.data.games[0].game.away.score}</p>
+            <p>{signalrManager.data.games[0].game.home.names.short} {signalrManager.data.games[0].game.home.score}</p>
+            <br>
+            <h4>{signalrManager.data.games[1].game.away.names.short} {signalrManager.data.games[1].game.away.score}</h4>
+            <h4>{signalrManager.data.games[1].game.home.names.short} {signalrManager.data.games[1].game.home.score}</h4>
+            <h4>{signalrManager.data.games[1].game.currentPeriod} {signalrManager.data.games[1].game.contestClock}</h4>
         </div>
     {:else}
         <p>Attempting to connect to backend...</p>
@@ -24,6 +29,3 @@
         font-family: monospace;
     }
 </style>
-
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
