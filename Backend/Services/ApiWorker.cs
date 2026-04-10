@@ -1,6 +1,9 @@
 // Backend/Services/ApiWorker.cs
 using Microsoft.AspNetCore.SignalR;
 using Backend.Hubs;
+using System.Text.Json;
+using ScoreFetch.Backend.Models;
+using Microsoft.OpenApi.Extensions;
 
 public class ApiWorker : BackgroundService
 {
@@ -21,7 +24,9 @@ public class ApiWorker : BackgroundService
             {
                 var client = _httpClientFactory.CreateClient();
                 // Replace with your actual remote API URL
-                var response = await client.GetStringAsync("https://ncaa-api.henrygd.me/scoreboard/basketball-men/d1", stoppingToken);
+                var response = await client.GetStringAsync("https://ncaa-api.henrygd.me/scoreboard/basketball-women/d1", stoppingToken);
+
+                //var gameInfos = GetLatestGameInfo(response.ToString());
 
                 // Push the raw JSON string to all Svelte clients
                 await _hubContext.Clients.All.SendAsync("ReceiveData", response, cancellationToken: stoppingToken);

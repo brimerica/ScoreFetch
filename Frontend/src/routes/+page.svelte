@@ -1,5 +1,7 @@
 <script>
     import { signalrManager } from '$lib/signalrStore.svelte';
+
+    //console.log("SignalR Manager State:", signalrManager);
 </script>
 
 <main>
@@ -8,12 +10,15 @@
     {#if signalrManager.isConnected}
         <div class="data-card">
             <h3>Latest Update from Remote API:</h3>
-            <p>{signalrManager.data.games[0].game.away.names.short} {signalrManager.data.games[0].game.away.score}</p>
-            <p>{signalrManager.data.games[0].game.home.names.short} {signalrManager.data.games[0].game.home.score}</p>
-            <br>
-            <h4>{signalrManager.data.games[1].game.away.names.short} {signalrManager.data.games[1].game.away.score}</h4>
-            <h4>{signalrManager.data.games[1].game.home.names.short} {signalrManager.data.games[1].game.home.score}</h4>
-            <h4>{signalrManager.data.games[1].game.currentPeriod} {signalrManager.data.games[1].game.contestClock}</h4>
+            {#each signalrManager.data.games as game, index}
+                <div>
+                    <h4>Game {index + 1}: {game.game.startDate} {game.game.startTime}</h4>
+                    <p>{game.game.away.names.short} {game.game.away.score}</p>
+                    <p>{game.game.home.names.short} {game.game.home.score}</p>
+                    <p>Period: {game.game.currentPeriod} | Clock: {game.game.contestClock}</p>
+                </div>
+                <hr>
+            {/each}
         </div>
     {:else}
         <p>Attempting to connect to backend...</p>
